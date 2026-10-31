@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FAF7F0;
+  --color-cream-light: #FDFAF5;
+  --color-cream-dark: #F2ECE0;
+  
+  --color-primary: #1F5C3A;
+  --color-primary-dark: #153F28;
+  --color-primary-light: #2A794E;
+  
+  --color-accent: #E8A33D;
+  --color-accent-hover: #D7922D;
+  --color-accent-light: #FBEFD9;
+  
+  --color-sage: #E6EFE3;
+  --color-sage-light: #F3F8F1;
+  --color-sage-border: #CFE0CB;
+  
+  --color-charcoal: #23302A;
+  --color-charcoal-light: #3D4F46;
+  --color-charcoal-muted: #5B6E64;
+
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  min-height: 100vh;
+}
+
+h1, h2, h3, .font-serif-heading {
+  font-family: var(--font-serif);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F2ECE0;
+}
+::-webkit-scrollbar-thumb {
+  background: #CFE0CB;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1F5C3A;
+}
+
+/* Funny cartoon wobble keyframes for login error */
+@keyframes funny-wobble {
+  0% { transform: translateX(0) rotate(0deg) scale(1); }
+  15% { transform: translateX(-12px) rotate(-4deg) scale(1.02); }
+  30% { transform: translateX(12px) rotate(4deg) scale(1.02); }
+  45% { transform: translateX(-8px) rotate(-2deg); }
+  60% { transform: translateX(8px) rotate(2deg); }
+  75% { transform: translateX(-4px) rotate(-1deg); }
+  100% { transform: translateX(0) rotate(0deg) scale(1); }
+}
+
+.animate-funny-wobble {
+  animation: funny-wobble 0.65s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes sprout-nod {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(10deg); }
+}
+
+.animate-sprout-nod {
+  animation: sprout-nod 1.2s ease-in-out infinite;
+}
